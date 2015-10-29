@@ -245,6 +245,7 @@ attention to case differences."
     tex-chktex
     tex-lacheck
     texinfo
+    thrift
     verilog-verilator
     xml-xmlstarlet
     xml-xmllint
@@ -8056,6 +8057,14 @@ See URL `http://www.gnu.org/software/texinfo/'."
           line (optional ":" column) ": "
           (message) line-end))
   :modes texinfo-mode)
+
+(flycheck-define-checker thrift
+  "A Thrift syntax checker using the Thrift compiler.
+
+See URL `https://thrift.apache.org/'."
+  :command ("thrift")
+  :error-patterns
+  :modes thrift-mode)
 
 (flycheck-def-option-var flycheck-verilator-include-path nil verilog-verilator
   "A list of include directories for Verilator.
