@@ -3,11 +3,13 @@
 
 (package-file "flycheck.el")
 
-(files "flycheck.el" "flycheck-ert.el"
+(files "flycheck.el"
+       "flycheck-ert.el" "flycheck-buttercup.el"
        ;; Cask automatically builds docs for us :)
        "doc/flycheck.texi")
 
 (development
+ (depends-on "buttercup")
  (depends-on "shut-up")                 ; Silence Emacs
 
  ;; Various modes for use in the unit tests
